@@ -2,6 +2,11 @@
 
 Un regalo digital romántico por el Día de la Primavera: carta, álbum de recuerdos, música y pequeñas sorpresas en una experiencia pensada primero para celular.
 
+## Producción
+
+- Página: <https://baldovinob93.github.io/FelizPrimaveraPonky/>
+- Repositorio: <https://github.com/baldovinob93/FelizPrimaveraPonky>
+
 ## Ejecutar localmente
 
 No conviene abrir `index.html` directamente. Desde la raíz del proyecto, iniciar un servidor estático:
