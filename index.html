@@ -1,0 +1,288 @@
+<!doctype html>
+<html lang="es-AR">
+<head>
+  <meta charset="utf-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1, viewport-fit=cover">
+  <meta name="theme-color" content="#f4c430">
+  <meta name="description" content="Un pequeño rincón hecho con amor.">
+  <meta property="og:type" content="website">
+  <meta property="og:title" content="Nuestra Primavera 💛">
+  <meta property="og:description" content="Un pequeño rincón hecho con amor.">
+  <meta name="twitter:card" content="summary">
+  <meta name="twitter:title" content="Nuestra Primavera 💛">
+  <meta name="twitter:description" content="Un pequeño rincón hecho con amor.">
+  <title>Nuestra Primavera 💛</title>
+  <link rel="icon" type="image/svg+xml" href="./assets/img/favicon/girasol.svg">
+  <link rel="preload" as="image" href="./assets/img/fotos/recuerdo-02.webp" type="image/webp">
+  <link rel="preconnect" href="https://fonts.googleapis.com">
+  <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+  <link href="https://fonts.googleapis.com/css2?family=DM+Sans:wght@400;500;600;700&amp;family=Parisienne&amp;family=Playfair+Display:ital,wght@0,500;0,600;1,500&amp;display=swap" rel="stylesheet">
+  <link rel="stylesheet" href="./css/styles.css?v=20260921c">
+</head>
+<body class="experience-locked">
+  <a class="skip-link" href="#inicio">Saltar al contenido</a>
+
+  <div class="gift-cover" id="giftCover" role="dialog" aria-modal="true" aria-labelledby="coverTitle">
+    <img class="gift-cover__photo" src="./assets/img/fotos/recuerdo-02.webp" alt="Nosotros sonriendo juntos" width="660" height="889" fetchpriority="high">
+    <div class="gift-cover__veil" aria-hidden="true"></div>
+    <span class="cover-glow cover-glow--one" aria-hidden="true"></span>
+    <span class="cover-glow cover-glow--two" aria-hidden="true"></span>
+
+    <div class="gift-cover__content">
+      <p class="eyebrow eyebrow--light">Un regalo hecho para vos</p>
+      <h1 id="coverTitle">Para vos,<br><em>mi amor</em> <span aria-hidden="true">💛</span></h1>
+      <p>Porque cada primavera es más linda desde que estás conmigo.</p>
+      <button class="button button--sun" id="openGift" type="button">
+        <span>Abrir mi regalo</span>
+        <span aria-hidden="true">💛</span>
+      </button>
+      <span class="cover-hint" aria-hidden="true">Un pedacito de nosotros te espera</span>
+    </div>
+  </div>
+
+  <noscript>
+    <style>
+      body { overflow: auto !important; }
+      .gift-cover { display: none !important; }
+      .experience-locked .site-shell { visibility: visible !important; }
+      [data-reveal] { opacity: 1 !important; transform: none !important; }
+    </style>
+    <div class="noscript-note">Activá JavaScript para abrir este regalo y disfrutar todas sus sorpresas.</div>
+  </noscript>
+
+  <div class="site-shell" id="siteShell">
+    <header class="site-header" id="siteHeader">
+      <a class="brand" href="#inicio" aria-label="Volver al inicio">
+        <span class="brand__flower" aria-hidden="true">✺</span>
+        <span>Nuestra primavera</span>
+      </a>
+      <nav class="site-nav" aria-label="Navegación principal">
+        <a href="#inicio">Inicio</a>
+        <a href="#momentos">Momentos</a>
+        <a href="#carta">Carta</a>
+        <a href="#musica">Música</a>
+      </nav>
+      <a class="music-status" id="musicShortcut" href="#musica" aria-label="Ir a nuestra canción">
+        <span class="music-status__icon" aria-hidden="true">♫</span>
+        <span id="headerMusicState">Nuestra canción</span>
+      </a>
+    </header>
+
+    <main>
+      <section class="hero section" id="inicio" aria-labelledby="heroTitle">
+        <div class="hero__copy" data-reveal>
+          <p class="eyebrow">21 de septiembre · para siempre</p>
+          <h2 id="heroTitle">Nuestra<br><em>Primavera</em></h2>
+          <p class="hero__lead">De todas las estaciones,<br>mi favorita siempre va a ser la que comparto con vos.</p>
+          <a class="text-link" href="#momentos">Recorrer nuestros momentos <span aria-hidden="true">↓</span></a>
+        </div>
+
+        <div class="hero__visual" data-reveal data-parallax="0.045">
+          <span class="hero__stamp" aria-hidden="true">vos + yo<br>siempre</span>
+          <figure class="hero__frame">
+            <img src="./assets/img/fotos/recuerdo-01.webp" alt="Nosotros compartiendo uno de nuestros paseos" width="671" height="893" fetchpriority="high">
+          </figure>
+          <span class="hero__note">mi lugar favorito ♡</span>
+          <span class="hero__spark hero__spark--one" aria-hidden="true">✦</span>
+          <span class="hero__spark hero__spark--two" aria-hidden="true">✦</span>
+        </div>
+      </section>
+
+      <section class="yellow-flowers section" aria-labelledby="flowersTitle">
+        <div class="flower-orbit" aria-hidden="true">
+          <span>✦</span><span>✺</span><span>✦</span>
+        </div>
+        <div class="yellow-flowers__inner" data-reveal>
+          <p class="eyebrow">Flores amarillas</p>
+          <h2 id="flowersTitle">Dicen que regalar flores amarillas significa querer compartir la vida con alguien...</h2>
+          <p>Yo simplemente quiero seguir compartiéndola con vos. <span aria-hidden="true">💛</span></p>
+        </div>
+      </section>
+
+      <section class="moments section" id="momentos" aria-labelledby="momentsTitle">
+        <div class="section-heading" data-reveal>
+          <p class="eyebrow">Nuestro pequeño álbum</p>
+          <h2 id="momentsTitle">Nuestros momentos <em>♡</em></h2>
+          <p>Un pedacito de todas las historias que todavía nos quedan por vivir.</p>
+        </div>
+
+        <div class="memory-grid" aria-label="Galería de nuestros recuerdos">
+          <button class="memory-card memory-card--wide" style="--tilt:-1.3deg" type="button" data-gallery-index="0" data-reveal>
+            <img src="./assets/img/fotos/recuerdo-01-thumb.webp" alt="Nosotros juntos junto al agua" width="671" height="893" loading="lazy">
+            <span class="memory-card__caption">Contigo todo es más bonito ♡</span>
+          </button>
+          <button class="memory-card" style="--tilt:1.8deg" type="button" data-gallery-index="1" data-reveal>
+            <img src="./assets/img/fotos/recuerdo-02-thumb.webp" alt="Una selfie de nosotros sonriendo" width="660" height="889" loading="lazy">
+            <span class="memory-card__caption">Qué suerte la mía ♡</span>
+          </button>
+          <button class="memory-card memory-card--tall" style="--tilt:-2deg" type="button" data-gallery-index="2" data-reveal>
+            <img src="./assets/img/fotos/recuerdo-03-thumb.webp" alt="Nosotros durante un paseo por la ciudad" width="669" height="898" loading="lazy">
+            <span class="memory-card__caption">Donde sea, pero con vos ♡</span>
+          </button>
+          <button class="memory-card" style="--tilt:1.2deg" type="button" data-gallery-index="3" data-reveal>
+            <img src="./assets/img/fotos/recuerdo-04-thumb.webp" alt="Un momento espontáneo y divertido juntos" width="664" height="889" loading="lazy">
+            <span class="memory-card__caption">Mi persona favorita ♡</span>
+          </button>
+          <button class="memory-card memory-card--offset" style="--tilt:-1.5deg" type="button" data-gallery-index="4" data-reveal>
+            <img src="./assets/img/fotos/recuerdo-05-thumb.webp" alt="Un momento tierno compartido" width="672" height="882" loading="lazy">
+            <span class="memory-card__caption">Gracias por estar ♡</span>
+          </button>
+          <button class="memory-card memory-card--wide" style="--tilt:1.4deg" type="button" data-gallery-index="5" data-reveal>
+            <img src="./assets/img/fotos/recuerdo-06-thumb.webp" alt="Nosotros disfrutando una salida especial" width="661" height="884" loading="lazy">
+            <span class="memory-card__caption">Uno de mis recuerdos favoritos ♡</span>
+          </button>
+          <button class="memory-card" style="--tilt:-1.8deg" type="button" data-gallery-index="6" data-reveal>
+            <img src="./assets/img/fotos/recuerdo-07-thumb.webp" alt="Nosotros sonriendo durante una aventura" width="648" height="854" loading="lazy">
+            <span class="memory-card__caption">Coleccionando momentos juntos ♡</span>
+          </button>
+          <button class="memory-card memory-card--tall" style="--tilt:1.5deg" type="button" data-gallery-index="7" data-reveal>
+            <img src="./assets/img/fotos/recuerdo-08-thumb.webp" alt="Nosotros en una noche llena de color" width="669" height="760" loading="lazy">
+            <span class="memory-card__caption">Vos hacés bonito cualquier lugar ♡</span>
+          </button>
+          <button class="memory-card memory-card--wide" style="--tilt:-1deg" type="button" data-gallery-index="8" data-reveal>
+            <img src="./assets/img/fotos/recuerdo-09-thumb.webp" alt="Nosotros juntos al atardecer" width="664" height="850" loading="lazy">
+            <span class="memory-card__caption">Siempre vos ♡</span>
+          </button>
+        </div>
+      </section>
+
+      <section class="quiet-message section" aria-labelledby="quietTitle">
+        <div class="quiet-message__mark" aria-hidden="true">♡</div>
+        <div class="quiet-message__copy" data-reveal>
+          <p id="quietTitle">Todo este tiempo juntos...</p>
+          <h2>y todavía me seguís haciendo sonreír como el primer día.</h2>
+          <p>Y lo mejor todavía está por venir ♡</p>
+        </div>
+        <div class="relationship" id="relationshipCounter" data-reveal aria-live="polite">
+          <p class="relationship__intro">Nuestro tiempo se mide mejor en sonrisas, abrazos y aventuras.</p>
+          <div class="relationship__grid" id="counterGrid" hidden></div>
+        </div>
+      </section>
+
+      <section class="letter-section section" id="carta" aria-labelledby="letterTitle">
+        <div class="letter-section__copy" data-reveal>
+          <p class="eyebrow">Hay palabras que guardé para vos</p>
+          <h2 id="letterTitle">Tengo algo que decirte...</h2>
+          <p>Una carta para leer sin apuro, como se leen las cosas que importan.</p>
+        </div>
+        <button class="envelope" id="openLetter" type="button" aria-label="Abrir carta romántica" data-reveal>
+          <span class="envelope__paper" aria-hidden="true"><span>Para mi amor</span></span>
+          <span class="envelope__body" aria-hidden="true"></span>
+          <span class="envelope__flap" aria-hidden="true"></span>
+          <span class="envelope__seal" aria-hidden="true">♡</span>
+          <span class="envelope__label">Abrir carta <span aria-hidden="true">💌</span></span>
+        </button>
+      </section>
+
+      <section class="music-section section" id="musica" aria-labelledby="musicTitle">
+        <div class="section-heading section-heading--light" data-reveal>
+          <p class="eyebrow eyebrow--light">Dale play a este momento</p>
+          <h2 id="musicTitle">Nuestra canción <em>♡</em></h2>
+          <p>Hay canciones que se escuchan...<br>y otras que se sienten.</p>
+        </div>
+
+        <div class="music-player" id="musicPlayer" data-reveal>
+          <div class="music-player__visual">
+            <div class="video-frame" aria-label="Video de nuestra canción">
+              <div id="youtubePlayer"></div>
+            </div>
+            <div class="sound-waves" id="soundWaves" aria-hidden="true">
+              <span></span><span></span><span></span><span></span><span></span>
+            </div>
+          </div>
+
+          <div class="music-player__content">
+            <p class="music-player__overline" id="musicState" aria-live="polite">Preparando nuestra canción...</p>
+            <h3>Nuestra canción ♡</h3>
+            <p>Porque hay canciones que también dicen lo que siento.</p>
+
+            <div class="music-player__timeline">
+              <label class="sr-only" for="musicProgress">Progreso de la canción</label>
+              <input id="musicProgress" type="range" min="0" max="100" value="0" step="0.1" disabled>
+              <div class="music-player__times"><span id="currentTime">0:00</span><span id="duration">0:00</span></div>
+            </div>
+
+            <div class="music-player__controls">
+              <button class="player-button player-button--main" id="toggleMusic" type="button" aria-label="Reproducir canción" disabled>
+                <span id="playIcon" aria-hidden="true">▶</span>
+              </button>
+              <div class="volume-control">
+                <label for="musicVolume">Volumen</label>
+                <input id="musicVolume" type="range" min="0" max="100" value="70" disabled>
+              </div>
+              <a class="youtube-link" href="https://youtu.be/S7gMzYqXIZc?si=PI3nOW3YDq8hktHP" target="_blank" rel="noopener noreferrer">Abrir en YouTube <span aria-hidden="true">↗</span></a>
+            </div>
+
+            <div class="music-fallback" id="musicFallback" hidden>
+              <p>Nuestra canción está esperando por vos ♡</p>
+              <button class="button button--sun button--small" id="retryMusic" type="button">Escuchar ahora 💛</button>
+            </div>
+          </div>
+        </div>
+      </section>
+
+      <section class="finale section" id="final" aria-labelledby="finalTitle">
+        <img class="finale__photo" src="./assets/img/fotos/recuerdo-09.webp" alt="Nosotros juntos en un atardecer especial" width="664" height="850" loading="lazy">
+        <div class="finale__overlay" aria-hidden="true"></div>
+        <div class="finale__content" data-reveal>
+          <p class="eyebrow eyebrow--light">Cada capítulo con vos es mi favorito</p>
+          <h2 id="finalTitle">Feliz Primavera,<br><em>mi amor</em> <span aria-hidden="true">💛</span></h2>
+          <p>Gracias por hacer más bonita mi vida.</p>
+          <p class="finale__wish">Por muchas primaveras más juntos ♡</p>
+          <button class="button button--glass" id="openSurprise" type="button">Una última cosita... ♡</button>
+        </div>
+      </section>
+    </main>
+
+    <footer class="site-footer">
+      <span aria-hidden="true">✺</span>
+      <p>Hecho con todo mi amor, para vos.</p>
+      <a href="#inicio">Volver al comienzo ↑</a>
+    </footer>
+  </div>
+
+  <dialog class="lightbox" id="lightbox" aria-labelledby="lightboxCaption">
+    <button class="modal-close" id="closeLightbox" type="button" aria-label="Cerrar galería">×</button>
+    <div class="lightbox__stage" id="lightboxStage">
+      <img id="lightboxImage" src="./assets/img/fotos/recuerdo-01.webp" alt="Nosotros juntos junto al agua">
+    </div>
+    <div class="lightbox__footer">
+      <button class="lightbox__nav" id="previousPhoto" type="button" aria-label="Foto anterior">←</button>
+      <div>
+        <p id="lightboxCaption"></p>
+        <span id="lightboxCount" aria-live="polite"></span>
+      </div>
+      <button class="lightbox__zoom" id="zoomPhoto" type="button" aria-label="Ampliar foto" aria-pressed="false">＋</button>
+      <button class="lightbox__nav" id="nextPhoto" type="button" aria-label="Foto siguiente">→</button>
+    </div>
+  </dialog>
+
+  <dialog class="letter-modal" id="letterModal" aria-labelledby="letterModalTitle">
+    <button class="modal-close modal-close--ink" id="closeLetter" type="button" aria-label="Cerrar carta">×</button>
+    <article class="letter-paper">
+      <span class="letter-paper__flower" aria-hidden="true">✺</span>
+      <h2 id="letterModalTitle">Mi amor,</h2>
+      <p>Gracias por ser mi primavera, por llenar mis días de alegría, por hacer que todo sea más bonito y por estar siempre, en cada aventura, en cada locura y en cada momento importante.</p>
+      <p>Quiero seguir construyendo mil primaveras más a tu lado, explorando el mundo, cumpliendo sueños y eligiéndote siempre.</p>
+      <p>Sos mi lugar seguro, mi persona favorita y la razón de tantas sonrisas.</p>
+      <p>Feliz Primavera, mi amor 💛</p>
+      <p class="letter-paper__signature">Te elijo hoy, mañana y siempre.</p>
+    </article>
+  </dialog>
+
+  <dialog class="surprise-modal" id="surpriseModal" aria-labelledby="surpriseTitle">
+    <button class="modal-close" id="closeSurprise" type="button" aria-label="Cerrar sorpresa">×</button>
+    <div class="surprise-modal__content">
+      <span class="surprise-modal__mark" aria-hidden="true">♡</span>
+      <p id="surpriseTitle">Entre millones de personas,<br>qué suerte la mía de haberte encontrado a vos.</p>
+      <strong>Te amo <span aria-hidden="true">💛</span></strong>
+      <button class="button button--sun" id="backToMemories" type="button">Volver a nuestros recuerdos</button>
+    </div>
+  </dialog>
+
+  <div class="petal-layer" id="petalLayer" aria-hidden="true"></div>
+
+  <script src="https://www.youtube.com/iframe_api" async></script>
+  <script src="./js/app.js?v=20260921" defer></script>
+</body>
+</html>

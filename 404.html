@@ -1,0 +1,67 @@
+<!doctype html>
+<html lang="es-AR">
+<head>
+  <meta charset="utf-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1">
+  <meta name="theme-color" content="#f4c430">
+  <meta name="robots" content="noindex">
+  <title>Entre las flores · Nuestra Primavera</title>
+  <link rel="icon" type="image/svg+xml" href="./assets/img/favicon/girasol.svg">
+  <style>
+    :root { color-scheme: light; font-family: Inter, system-ui, sans-serif; }
+    * { box-sizing: border-box; }
+    body {
+      display: grid;
+      min-width: 320px;
+      min-height: 100vh;
+      min-height: 100svh;
+      margin: 0;
+      padding: 1.25rem;
+      place-items: center;
+      overflow: hidden;
+      color: #29351f;
+      background:
+        radial-gradient(circle at 20% 20%, rgba(244, 196, 48, .32), transparent 20rem),
+        radial-gradient(circle at 80% 80%, rgba(120, 132, 91, .18), transparent 20rem),
+        #fff8df;
+    }
+    main {
+      position: relative;
+      width: min(100%, 42rem);
+      padding: clamp(2.5rem, 8vw, 5rem) clamp(1.25rem, 6vw, 4rem);
+      border: 1px solid rgba(113, 91, 35, .14);
+      border-radius: 2rem;
+      background: rgba(255, 253, 246, .86);
+      box-shadow: 0 30px 80px rgba(75, 59, 21, .14);
+      text-align: center;
+    }
+    .flower { display: block; color: #d99b08; font-size: 4rem; line-height: 1; }
+    .code { margin: 1rem 0 0; color: #b9851b; font-size: .75rem; font-weight: 800; letter-spacing: .22em; }
+    h1 { margin: .75rem 0; font-family: Georgia, serif; font-size: clamp(2.4rem, 8vw, 4.5rem); font-weight: 500; line-height: 1.05; }
+    p { margin: 0 auto 1.8rem; color: #6c6659; font-size: 1.05rem; }
+    a {
+      display: inline-flex;
+      min-height: 3.5rem;
+      padding: .9rem 1.4rem;
+      align-items: center;
+      justify-content: center;
+      border-radius: 999px;
+      color: #2d2719;
+      background: #f4c430;
+      box-shadow: 0 14px 35px rgba(244, 196, 48, .28);
+      font-weight: 750;
+      text-decoration: none;
+    }
+    a:focus-visible { outline: 3px solid #29351f; outline-offset: 4px; }
+  </style>
+</head>
+<body>
+  <main>
+    <span class="flower" aria-hidden="true">✺</span>
+    <p class="code">ERROR 404</p>
+    <h1>Parece que te perdiste entre las flores 🌻</h1>
+    <p>Este caminito no lleva a nuestros recuerdos, pero estás muy cerquita.</p>
+    <a href="./">Volver a nuestra primavera</a>
+  </main>
+</body>
+</html>
