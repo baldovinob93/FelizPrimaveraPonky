@@ -5,6 +5,13 @@
   const YOUTUBE_VIDEO_ID = "S7gMzYqXIZc";
   const YOUTUBE_URL = "https://youtu.be/S7gMzYqXIZc?si=PI3nOW3YDq8hktHP";
   const reduceMotion = window.matchMedia("(prefers-reduced-motion: reduce)");
+  const compactScreen = window.matchMedia("(max-width: 431px)");
+  const connection = navigator.connection || navigator.mozConnection || navigator.webkitConnection;
+  const constrainedDevice = Boolean(
+    connection?.saveData
+    || (navigator.deviceMemory && navigator.deviceMemory <= 4)
+    || (navigator.hardwareConcurrency && navigator.hardwareConcurrency <= 4)
+  );
 
   const state = {
     galleryIndex: 0,
@@ -15,11 +22,17 @@
     pendingPlay: false,
     progressTimer: null,
     autoplayTimer: null,
-    touchStartX: 0,
+    touchStartX: null,
+    touchStartY: null,
+    touchPointerId: null,
     lastFocusedElement: null,
   };
 
   const byId = (id) => document.getElementById(id);
+
+  function syncMotionProfile() {
+    document.body.classList.toggle("lite-motion", constrainedDevice || compactScreen.matches);
+  }
 
   function initGiftOpening() {
     const cover = byId("giftCover");
@@ -93,7 +106,7 @@
   }
 
   function initParallax() {
-    if (reduceMotion.matches) return;
+    if (reduceMotion.matches || constrainedDevice || compactScreen.matches) return;
     const elements = [...document.querySelectorAll("[data-parallax]")];
     if (!elements.length) return;
 
@@ -122,7 +135,8 @@
   function startPetals(count = 16) {
     if (reduceMotion.matches) return;
     const layer = byId("petalLayer");
-    const safeCount = Math.min(count, 24);
+    const particleLimit = constrainedDevice ? 7 : compactScreen.matches ? 10 : 24;
+    const safeCount = Math.min(count, particleLimit);
 
     for (let index = 0; index < safeCount; index += 1) {
       const petal = document.createElement("span");
@@ -187,6 +201,7 @@
 
     const resetZoom = () => {
       image.classList.remove("is-zoomed");
+      stage.classList.remove("is-zoomed");
       zoomButton.setAttribute("aria-pressed", "false");
       zoomButton.setAttribute("aria-label", "Ampliar foto");
       zoomButton.textContent = "＋";
@@ -233,6 +248,7 @@
 
     zoomButton.addEventListener("click", () => {
       const zoomed = image.classList.toggle("is-zoomed");
+      stage.classList.toggle("is-zoomed", zoomed);
       zoomButton.setAttribute("aria-pressed", String(zoomed));
       zoomButton.setAttribute("aria-label", zoomed ? "Reducir foto" : "Ampliar foto");
       zoomButton.textContent = zoomed ? "−" : "＋";
@@ -244,15 +260,38 @@
     });
 
     stage.addEventListener("pointerdown", (event) => {
-      if (!image.classList.contains("is-zoomed")) state.touchStartX = event.clientX;
+      if (image.classList.contains("is-zoomed") || !event.isPrimary) return;
+      state.touchStartX = event.clientX;
+      state.touchStartY = event.clientY;
+      state.touchPointerId = event.pointerId;
     });
 
     stage.addEventListener("pointerup", (event) => {
-      if (image.classList.contains("is-zoomed")) return;
-      const distance = event.clientX - state.touchStartX;
-      if (Math.abs(distance) < 45) return;
-      move(distance > 0 ? -1 : 1);
+      if (
+        image.classList.contains("is-zoomed")
+        || state.touchStartX === null
+        || state.touchPointerId !== event.pointerId
+      ) return;
+
+      const horizontalDistance = event.clientX - state.touchStartX;
+      const verticalDistance = event.clientY - state.touchStartY;
+      state.touchStartX = null;
+      state.touchStartY = null;
+      state.touchPointerId = null;
+
+      if (Math.abs(horizontalDistance) < 45 || Math.abs(horizontalDistance) <= Math.abs(verticalDistance) * 1.2) return;
+      move(horizontalDistance > 0 ? -1 : 1);
     });
+
+    stage.addEventListener("pointercancel", () => {
+      state.touchStartX = null;
+      state.touchStartY = null;
+      state.touchPointerId = null;
+    });
+
+    const orientationQuery = window.matchMedia("(orientation: portrait)");
+    if (orientationQuery.addEventListener) orientationQuery.addEventListener("change", resetZoom);
+    else orientationQuery.addListener(resetZoom);
 
     dialog.addEventListener("close", resetZoom);
   }
@@ -531,7 +570,7 @@
     });
 
     retry.addEventListener("click", () => {
-      if (state.playerUnavailable || !state.playerReady) {
+      if (state.playerUnavailable) {
         window.open(YOUTUBE_URL, "_blank", "noopener,noreferrer");
       } else {
         requestMusicPlayback();
@@ -551,6 +590,9 @@
   }
 
   function init() {
+    syncMotionProfile();
+    if (compactScreen.addEventListener) compactScreen.addEventListener("change", syncMotionProfile);
+    else compactScreen.addListener(syncMotionProfile);
     initGiftOpening();
     initNavigation();
     initScrollAnimations();

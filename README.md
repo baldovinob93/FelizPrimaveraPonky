@@ -76,6 +76,12 @@ El sitio usa rutas relativas compatibles con un proyecto publicado dentro de `/F
 
 Antes de hacer público el repositorio, recordar que contiene copias optimizadas de fotografías personales. Aunque no incluyen EXIF, la página publicada permite verlas.
 
+## Compatibilidad móvil
+
+La interfaz es mobile-first y contempla viewports dinámicos, safe areas, orientación vertical y horizontal, controles táctiles amplios y gestos horizontales en el lightbox. Las animaciones y partículas se reducen automáticamente en pantallas pequeñas, equipos con recursos limitados o cuando el sistema solicita menos movimiento.
+
+La música nunca depende de autoplay: primero intenta reproducirse después de la interacción de apertura y conserva el botón **Escuchar ahora 💛** como alternativa si el navegador la bloquea.
+
 ## Privacidad y rendimiento
 
 Las copias WebP se generan sin EXIF, GPS ni información del dispositivo. La galería carga miniaturas y reserva las versiones amplias para el lightbox. Las animaciones respetan `prefers-reduced-motion`.
